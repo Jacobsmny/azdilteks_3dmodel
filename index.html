@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги уборки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="your-logo.png" alt="Логотип" class="logo"> <!-- Место для вашего логотипа -->
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <button onclick="openModal('service1')">Чистка ковров</button>
+            <button onclick="openModal('service2')">Мойка окон</button>
+            <button onclick="openModal('service3')">Уборка дома</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            <button onclick="openModal('service4')">Полировка мебели</button>
+            
+        </div>
+        <div class="content">
+            <h2>Чек:</h2>
+            <ul id="orderList"></ul>
+        </div>
+    </div>
+
+    <!-- Модальные окна -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="serviceTitle">Информация об услуге</h2>
+            <p id="serviceDescription"></p>
+            <p><strong>Цена:</strong> <span id="servicePrice"></span> руб.</p>
+            <button onclick="addToOrder()">Оформить заказ</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
