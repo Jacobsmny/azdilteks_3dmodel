@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уборка квартиры</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="img/IMG_6424.png" alt="Логотип" class="logo">
+        <div class="language-switcher">
+            <button onclick="changeLanguage('ru')">Русский</button>
+            <button onclick="changeLanguage('uz')">O'zbek</button>
+            <button onclick="changeLanguage('en')">English</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <button id="service1-btn" onclick="openModal('service1')">Генеральная уборка</button>
+            <button id="service2-btn" onclick="openModal('service2')">Мытье окон</button>
+            <button id="service3-btn" onclick="openModal('service3')">Полная уборка квартиры</button>
+        </div>
+        <div class="content">
+            <h2 id="selectedTitle">Выбрано:</h2>
+            <ul id="orderList"></ul>
+            <p id="totalLabel">Итого: <span id="totalPrice">0</span> сум</p>
+            <button id="confirmBtn" onclick="openOrderForm()">Оформить заказ</button>
+        </div>
+        <div class="order-history">
+            <
