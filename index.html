@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение Font Awesome для социальных иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="header-left">
+            <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://t.me/yourprofile" target="_blank" aria-label="Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+        </div>
+        <div class="header-center">
+            <img src="photos/1.png" alt="Логотип" id="site-logo">
+        </div>
+        <div class="header-right">
+            <!-- Пример: кнопки Вход и Регистрация -->
+            <button class="header-button">Вход</button>
+            <button class="header-button">Регистрация</button>
+        </div>
+    </header>
+
+    <div class="main-page">
+        <div class="logo">
+            
+        </div>
+        <div class="service-grid">
+            <!-- Динамически генерируемые элементы услуг -->
+        </div>
+    </div>
+
+    <!-- Модальное окно для деталей услуги -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="serviceTitle"></h2>
+            <p id="serviceDescription"></p>
+            <p>Цена за единицу: <span id="servicePrice"></span> Сум</p>
+            <label for="squareMeters">Количество (кв. м):</label>
+            <input type="number" id="squareMeters" value="1" min="1" onchange="updateTotalPrice()">
+            <p>Общая цена: <span id="totalServicePrice"></span> Сум</p>
+            <button onclick="addToOrder()">Добавить в заказ</button>
+        </div>
+    </div>
+
+    <!-- Форма заказа -->
+    <div id="orderFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderForm()">&times;</span>
+            <h2>Оформление заказа</h2>
+            <input type="text" id="name" placeholder="Ваше имя">
+            <input type="tel" id="phone" placeholder="Ваш телефон">
+            <input type="text" id="address" placeholder="Ваш адрес">
+            <input type="date" id="date">
+            <input type="time" id="time">
+            <button onclick="confirmOrder()">Подтвердить заказ</button>
+        </div>
+    </div>
+
+    <!-- Детали заказа -->
+    <div id="orderDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderDetails()">&times;</span>
+            <h2>Детали заказа</h2>
+            <p>Имя: <span id="detailsName"></span></p>
+            <p>Общая сумма: <span id="detailsTotal"></span> Сум</p>
+            <p>Адрес: <span id="detailsAddress"></span></p>
+            <p>Дата: <span id="detailsDate"></span></p>
+            <p>Время: <span id="detailsTime"></span></p>
+            <p>Услуги: <span id="detailsService"></span></p>
+            <p>Количество: <span id="detailsSquareMeters"></span> кв. м</p>
+            <p>Цена услуг: <span id="detailsServicePrice"></span> Сум</p>
+        </div>
+    </div>
+
+    <!-- История заказов -->
+    <div class="order-history" id="orderHistory">
+        <!-- Здесь будут отображаться предыдущие заказы -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

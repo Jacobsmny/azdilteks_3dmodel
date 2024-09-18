@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Шапка сайта */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002060;
+    padding: 10px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left a {
+    color: white;
+    margin-right: 15px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.header-left a:hover {
+    color: #FFD700;
+}
+
+.header-center img {
+    height: 100px; /* Регулируйте размер логотипа по необходимости */
+}
+
+.header-right .header-button {
+    background-color: #FFD700;
+    color: #002060;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.header-right .header-button:hover {
+    background-color: #FFC300;
+}
+
+.main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #002060;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.logo {
+    color: white;
+    margin-bottom: 100px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    overflow-y: auto;
+}
+
+.service-item {
+    background-color: #FFD700;
+    color: #002060;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    height: 250px; /* Увеличили высоту блока */
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-item img {
+    width: 100%; /* Изображение занимает всю ширину блока */
+    height: 150px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Изображение обрезается по размеру блока */
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.service-item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.service-item button {
+    background-color: #0040b3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+.service-item button:hover {
+    background-color: #0055d4;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    cursor: pointer;
+    background-color: #0040b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0055d4;
+}
+
+/* История заказов */
+.order-history {
+    margin: 20px;
+}
+
+.order-card {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.order-card:hover {
+    transform: scale(1.02);
+}
+
+/* Адаптивность */
+@media screen and (max-width: 1200px) {
+    .service-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .service-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .header-left, .header-center, .header-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header-left a {
+        margin: 0 10px;
+    }
+
+    .header-right .header-button {
+        margin: 5px 5px 0 0;
+    }
+}
